@@ -7,7 +7,8 @@
 
 ## Hands-on Skill Development
 
-*[ Microsoft Learn AI Engineer labs](https://docs.microsoft.com/en-us/learn/browse/?roles=ai-engineer)
+* [MS Learn AI Fundamentals Labs](https://github.com/MicrosoftDocs/ai-fundamentals)
+* [ Microsoft Learn AI Engineer labs](https://docs.microsoft.com/en-us/learn/browse/?roles=ai-engineer)
 * [Microsoft: Hands on with AI](https://aidemos.microsoft.com/)
 * [Bot Framework Samples](https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md)
 * [Microsoft AI School](https://aischool.microsoft.com/en-us)

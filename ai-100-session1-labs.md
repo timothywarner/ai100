@@ -7,7 +7,7 @@
 * Ethical AI
 * Compliance Manager
 
-## Azure AI Stack Overview
+## Azure AI Technology Stack Overview
 
 * Storage
     * Blob storage
@@ -45,13 +45,14 @@
     * Event Grid
     * Application Insights
 
-## Machine Learning in Azure
+## Azure Machine Learning
 
+* Legacy vs current service
 * AML Service
     * Deployments
-    * FPGAs
+    * CPU, GPU, FPGA
 
-## Intro to Cognitive Services
+## Azure Cognitive Services
 
 * Vision
     * Computer Vision

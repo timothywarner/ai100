@@ -1,6 +1,6 @@
 # AI-100 Session 2 Labs
 
-## Azure Bot Service Overview
+## Azure Bot Service
 
 * Bot Service vs Bot Framework
 * Tools
@@ -9,16 +9,23 @@
   * Bot Composer
   * Bot Emulator
 
-## Creating Bots
+## Creating Bots in Azure
 
 * QnA Maker
 * LUIS
 * Cognitive Services integration
 * Channels
 
+## Monitoring Azure AI Solutions
+
+* AML service
+  * Workspace diagnostics/metrics
+* Bots
+  * Bot analytics
+
 ## AI-100 Exam Strategy
 
-* asdf
-
-
-
+* Item types
+* Online testing process
+* After the exam
+* Practice questions
