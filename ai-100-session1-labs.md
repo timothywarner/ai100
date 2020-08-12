@@ -56,8 +56,8 @@
 
 * Data integration
     * Data Science VM
-    * Azure Data Factory
-    * Azure Stream Analytics
+    * Data Factory
+    * Stream Analytics
     * Functions
     * Logic Apps
     * IoT Hub
