@@ -2,32 +2,51 @@
 
 ## Fundamental Terminology
 
-* Artificial Intelligence
-* Machine Learning
-* Ethical AI
+* AI & ML
+* Responsible AI
 * Compliance Manager
 
-## Azure AI Technology Stack Overview
+## Azure AI Platform Overview
 
-* Storage
-    * Blob storage
-        * Table service
+* Azure Machine Learning
+    * Cloud service
+    * Server
+    * SQL Server ML Services
+* Data Science VM
+* MMLSpark
+    * Azure HDInsight
+    * Azure Databricks
+* Cognitive Services
+* Azure Bot Service
+
+## Storage
+
+* Blob storage
+    * Table service
     * Data Lake storage
-* Key Vault
-    * Soft delete
-    * Purge protection
+
 * SQL Server
     * Azure SQL DB
     * Synapse Analytics
     * SQL Server on VM
+
 * Cosmos DB
     * Request units
     * Partitioning
+
+## ML Data Analysis and Model Development
+
+* Key Vault
+    * Soft delete
+    * Purge protection
+
 * HDInsight
     * MMLSpark
     * Apache Storm
+
 * Databricks
     * Jupyter Notebooks
+
 * AKS
     * Managed identity
     * SSH access
@@ -36,6 +55,7 @@
         * Cluster
 
 * Data integration
+    * Data Science VM
     * Azure Data Factory
     * Azure Stream Analytics
     * Functions
@@ -51,22 +71,3 @@
 * AML Service
     * Deployments
     * CPU, GPU, FPGA
-
-## Azure Cognitive Services
-
-* Vision
-    * Computer Vision
-    * Face
-    * Video Indexer
-* Speech
-    * Speech to Text
-    * Speaker Recognition
-    * Speech Translation
-* Language
-    * Text Analytics
-    * LUIS
-* Decision
-    * Content Moderator
-* Search
-    * Bing Search
-    * Bing Statistics
