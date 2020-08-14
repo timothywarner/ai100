@@ -1,6 +1,5 @@
 # AI-100 Session 2 Labs
 
-
 ## Azure Cognitive Services
 
 * Vision
@@ -19,13 +18,6 @@
 * Search
     * Bing Search
     * Bing Statistics
-
-
-
-
-
-
-
 
 ## Azure Bot Service
 

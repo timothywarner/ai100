@@ -57,6 +57,7 @@
 * Data integration
     * Data Science VM
     * Data Factory
+        * Copy Data: Blob to Azure SQL
     * Stream Analytics
     * Functions
     * Logic Apps
@@ -70,4 +71,5 @@
 * Legacy vs current service
 * AML Service
     * Deployments
+        * TLS, custom domain
     * CPU, GPU, FPGA
