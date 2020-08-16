@@ -2,8 +2,11 @@
 
 ## Theoretical Knowledge
 
-* [MMLSpark](https://mmlspark.blob.core.windows.net/website/index.html#install)
-*
+* [Azure AI Platform](https://azure.microsoft.com/en-us/overview/ai-platform/)
+* [Azure Cognitive Services home page](https://azure.microsoft.com/en-us/services/cognitive-services/)
+* [Azure Machine Learning docs](https://docs.microsoft.com/en-us/azure/machine-learning/)
+* [Azure Bot Service docs](https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0)
+* [Pluralsight AI-100 Skill Path](https://app.pluralsight.com/paths/skills/microsoft-azure-ai-engineer-ai-100)
 
 ## Hands-on Skill Development
 
@@ -13,14 +16,8 @@
 * [Bot Framework Samples](https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md)
 * [Microsoft AI School](https://aischool.microsoft.com/en-us)
 * [Learn AI - Airlift](https://github.com/Azure/LearnAI-Airlift)
-* [Predictive Analytics with Spark and MMLSpark in Azure Databricks](https://microsoftlearning.github.io/databricks-ml/Lab%205%20-%20Using%20the%20MML%20Spark%20Library.pdf)
-* [Azure Text-to-Speech example](https://rajeeshmenoth.wordpress.com/2018/10/17/cognitive-services-convert-text-to-speech-in-multiple-languages-using-asp-net-core-c/)
-* [Azure Long Audio API](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstarts/text-to-speech/async-synthesis-long-form-audio)
-* [BotBuilder Generator](https://github.com/Microsoft/BotBuilder-Samples/tree/master/generators/generator-botbuilder)
-* [Text Analytics API Tester](https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7/console)
-* asdf
-
-
+* [Cloud Academy AI-100 course](https://cloudacademy.com/course/ai-100-exam-preparation-introduction/ai-100-exam-preparation-introduction/)
+* [Linux Academy AI-100 course](https://acloud.guru/learn/ac55b4f9-5ee6-4632-a400-940546dc2cbf?utm_source=legacyla&utm_medium=redirect&utm_campaign=one_platform)
 
 ## Practice exam
 
