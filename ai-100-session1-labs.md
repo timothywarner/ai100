@@ -3,10 +3,46 @@
 ## Fundamental Terminology
 
 * AI & ML
+* REST (Postman demo)
 * Responsible AI
 * Compliance Manager
 
-## Azure AI Platform Overview
+## Azure AI Tech Stack Overview
+
+* Data Science VM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * Azure Machine Learning
     * Cloud service
