@@ -1,6 +1,5 @@
 ## Azure Key Vault - Soft Delete and Purge Protection
 
-Ref:
 
 ### Enable soft delete on existing KV
 
