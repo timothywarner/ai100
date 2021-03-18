@@ -17,15 +17,6 @@
         * [Face API](https://eastus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236/console)
         * Form Recognizer
         * Video Indexer
-    * Web Search
-        * Bing Autosuggest
-        * Bing Custom Search
-        * Bing Entity Search
-        * Bing News Search
-        * Bing Spell Check
-        * Bing Video Search
-        * Bing Visual Search
-        * Bing Web Search
 
 * Cognitive Services SDKs
     * C#
