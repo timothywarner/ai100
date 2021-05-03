@@ -23,8 +23,16 @@
 * Tour three model dev processes
 * Test REST API
 
-## Implement and Monitor AI Solutions (30%)
+### Cognitive Services
 
 * Anomaly Detection website
+
+
+## Implement and Monitor AI Solutions (30%)
+
+### Conversational AI
+
+
+### Monitoring
 
 
