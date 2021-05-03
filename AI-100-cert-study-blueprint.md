@@ -9,6 +9,7 @@
 * [Bot Framework Composer docs](https://docs.microsoft.com/en-us/composer/)
 * [Power Platform docs](https://docs.microsoft.com/en-us/power-platform/)
 * [Pluralsight AI-100 Skill Path](https://app.pluralsight.com/paths/skills/microsoft-azure-ai-engineer-ai-100)
+* [Anomaly Detector online demo](https://algoevaluation.azurewebsites.net/#/)
 
 ## Hands-on Skill Development
 
