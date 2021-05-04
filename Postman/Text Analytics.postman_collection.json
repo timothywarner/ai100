@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "08783e67-f6ca-40ee-9ca3-8975e7117f86",
+		"name": "Text Analytics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Detect Language",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{api}}",
+						"description": "Text Analytics API auth key",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "Content type declaration",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documents\": [\r\n    {\r\n      \"id\": \"1\",\r\n      \"text\": \"Hello world\"\r\n    },\r\n    {\r\n      \"id\": \"2\",\r\n      \"text\": \"Bonjour tout le monde\"\r\n    },\r\n    {\r\n      \"id\": \"3\",\r\n      \"text\": \"La carretera estaba atascada. Había mucho tráfico el día de ayer.\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/text/analytics/v3.0/languages",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"text",
+						"analytics",
+						"v3.0",
+						"languages"
+					]
+				},
+				"description": "https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console"
+			},
+			"response": []
+		},
+		{
+			"name": "Detect Sentiment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Text Analytics API auth key",
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"description": "Content type declaration",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documents\": [\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"1\",\r\n      \"text\": \"I am supremely angry and never will work with you again.\"\r\n    },\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"2\",\r\n      \"text\": \"It's incredibly sunny outside! I'm so happy.\"\r\n    },\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"3\",\r\n      \"text\": \"Pike place market is just okay.\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/text/analytics/v3.0/sentiment",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"text",
+						"analytics",
+						"v3.0",
+						"sentiment"
+					]
+				},
+				"description": "https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console"
+			},
+			"response": []
+		},
+		{
+			"name": "Named Entity Recognition",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Text Analytics API auth key",
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"description": "Content type declaration",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documents\": [\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"1\",\r\n      \"text\": \"I had a wonderful trip to Seattle last week.\"\r\n    },\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"2\",\r\n      \"text\": \"I work at Microsoft.\"\r\n    },\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"3\",\r\n      \"text\": \"I visited the Taj Mahal 2 times.\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/text/analytics/v3.0/entities/recognition",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"text",
+						"analytics",
+						"v3.0",
+						"entities",
+						"recognition"
+					]
+				},
+				"description": "https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console"
+			},
+			"response": []
+		},
+		{
+			"name": "Key Phrases",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Text Analytics API auth key",
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"description": "Content type declaration",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documents\": [\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"1\",\r\n      \"text\": \"Hello world. This is some input text that I love.\"\r\n    },\r\n    {\r\n      \"language\": \"fr\",\r\n      \"id\": \"2\",\r\n      \"text\": \"Bonjour tout le monde\"\r\n    },\r\n    {\r\n      \"language\": \"es\",\r\n      \"id\": \"3\",\r\n      \"text\": \"La carretera estaba atascada. Había mucho tráfico el día de ayer.\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/text/analytics/v3.0/keyPhrases",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"text",
+						"analytics",
+						"v3.0",
+						"keyPhrases"
+					]
+				},
+				"description": "https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "9eb860c7-3313-42a1-8ab7-56b96e9875ba",
+		"name": "Content Moderator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Moderate Content",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{api}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "image/png",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/tim/Desktop/ai100/content-moderation-images/sample1.jpg"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/contentmoderator/moderate/v1.0/ProcessImage/Evaluate",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"contentmoderator",
+						"moderate",
+						"v1.0",
+						"ProcessImage",
+						"Evaluate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

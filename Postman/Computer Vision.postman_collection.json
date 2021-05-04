@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "b00cda4b-5e98-4d35-8241-e547abc8bdff",
+		"name": "Computer Vision",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Thumbnail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{api}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "image/png",
+						"description": "or JSON",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"url": {
+					"raw": "{{base}}/vision/v3.1/generateThumbnail?width=128&height=128&smartCropping=true",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"vision",
+						"v3.1",
+						"generateThumbnail"
+					],
+					"query": [
+						{
+							"key": "width",
+							"value": "128"
+						},
+						{
+							"key": "height",
+							"value": "128"
+						},
+						{
+							"key": "smartCropping",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analyze Image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "image/png"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/tim/Desktop/landmark01.jpg"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/vision/v3.1/analyze?details=Landmarks",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"vision",
+						"v3.1",
+						"analyze"
+					],
+					"query": [
+						{
+							"key": "visualFeatures",
+							"value": "Faces",
+							"description": "Brands, Faces, Description, ImageType, Objects, Tags",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "en",
+							"disabled": true
+						},
+						{
+							"key": "details",
+							"value": "Landmarks",
+							"description": "Landmarks"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Describe Image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "image/png"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/tim/Desktop/me.png"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/vision/v3.1/describe?maxCandidates=1&language=en",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"vision",
+						"v3.1",
+						"describe"
+					],
+					"query": [
+						{
+							"key": "maxCandidates",
+							"value": "1",
+							"description": "Max # candidate descriptions to be returned"
+						},
+						{
+							"key": "language",
+							"value": "en"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detect Objects",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "image/png"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/tim/Desktop/ai900cs/training-materials/Carrot8.JPG"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/vision/v3.1/detect",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"vision",
+						"v3.1",
+						"detect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Area of Interest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "image/png"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/Tim/Desktop/4-2-fruit-png-image.png"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/vision/v3.1/areaOfInterest",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"vision",
+						"v3.1",
+						"areaOfInterest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OCR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "image/png"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/tim/Desktop/ai900/resources/ocrtest-noisy.jpg"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/vision/v3.1/ocr?language=en&detectOrientation=true",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"vision",
+						"v3.1",
+						"ocr"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "en"
+						},
+						{
+							"key": "detectOrientation",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tag Image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "image/png"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/tim/Desktop/wr.png"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/vision/v3.1/tag?language=en",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"vision",
+						"v3.1",
+						"tag"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "en"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

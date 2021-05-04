@@ -1,0 +1,899 @@
+{
+	"info": {
+		"_postman_id": "21c4c3c0-3ac7-4786-ae64-31e8139e856c",
+		"name": "Face API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Person Group Operations",
+			"item": [
+				{
+					"name": "1. Create Person Group",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"students1\",\r\n    \"userData\": \"students1 person group\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base}}/face/v1.0/persongroups/1",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"persongroups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get Person Group",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/face/v1.0/persongroups/1",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"persongroups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Update Person Group",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"authors\",\r\n    \"userData\": \"authors person group (updated)\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base}}/persongroups/1",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"persongroups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Delete Person Group",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base}}/persongroups/1",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"persongroups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. List Person Groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/persongroups",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"persongroups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2. Person Operations",
+			"item": [
+				{
+					"name": "1. Create Person",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response has personId\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.personId).to.not.equal(null);",
+									"    pm.environment.set(\"personId\", jsonData.personId);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Steve Zaccanelli\",\r\n    \"userData\": \"Steve Zaccanelli, RaymondCorp\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base}}/face/v1.0/persongroups/1/persons",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"persongroups",
+								"1",
+								"persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get Person",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response has correct personId\", function() {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.personId).to.be.equal(pm.environment.get(\"personId\"));",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/face/v1.0/persongroups/1/persons/{{personId}}",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"persongroups",
+								"1",
+								"persons",
+								"{{personId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Update Person",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Steve Michelotti\",\r\n    \"userData\": \"Steve Michelotti, Microsoft (updated)\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base}}/persongroups/1/persons/{{personId}}",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"persongroups",
+								"1",
+								"persons",
+								"{{personId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Delete Person",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base}}/persongroups/1/persons/{{personId}}",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"persongroups",
+								"1",
+								"persons",
+								"{{personId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. List Persons in Person Group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response is empty array\", function() {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.length).to.be.equal(0);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/face/v1.0/persongroups/1/persons/",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"persongroups",
+								"1",
+								"persons",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3. Person Face Operations",
+			"item": [
+				{
+					"name": "1. Create Person Face",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response has persistedFaceId\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.persistedFaceId).to.not.equal(null);",
+									"    pm.environment.set(\"persistedFaceId\", jsonData.persistedFaceId);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://techtrainertim.com/images/headshot.png\"\n}"
+						},
+						"url": {
+							"raw": "{{base}}/face/v1.0/persongroups/1/persons/{{personId}}/persistedFaces",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"persongroups",
+								"1",
+								"persons",
+								"{{personId}}",
+								"persistedFaces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get Person Face",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is ok\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response has persistedFaceId\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.persistedFaceId).to.not.equal(null);",
+									"    pm.environment.set(\"persistedFaceId\", jsonData.persistedFaceId);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/face/v1.0/persongroups/1/persons/{{personId}}/persistedFaces/{{persistedFaceId}}",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"persongroups",
+								"1",
+								"persons",
+								"{{personId}}",
+								"persistedFaces",
+								"{{persistedFaceId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Update Person Face",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{face-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userData\": \"https://psfaceapicourse.blob.core.windows.net/individuals/steve2.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{base-url-face}}/persongroups/1/persons/{{personId}}/persistedFaces/{{persistedFaceId}}",
+							"host": [
+								"{{base-url-face}}"
+							],
+							"path": [
+								"persongroups",
+								"1",
+								"persons",
+								"{{personId}}",
+								"persistedFaces",
+								"{{persistedFaceId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Delete Person Face",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{face-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base-url-face}}/persongroups/1/persons/{{personId}}/persistedFaces/{{persistedFaceId}}",
+							"host": [
+								"{{base-url-face}}"
+							],
+							"path": [
+								"persongroups",
+								"1",
+								"persons",
+								"{{personId}}",
+								"persistedFaces",
+								"{{persistedFaceId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4. Training and Identification",
+			"item": [
+				{
+					"name": "1. Train Person Group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is 202\", function() {",
+									"    pm.response.to.be.accepted;",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base}}/face/v1.0/persongroups/1/train",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"persongroups",
+								"1",
+								"train"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get Training Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/face/v1.0/persongroups/1/training",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"persongroups",
+								"1",
+								"training"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Face Detection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is 200\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response should have 3 Face IDs\", function() {",
+									"   var jsonData = pm.response.json();",
+									"   pm.expect(jsonData.length).to.equal(3);",
+									"   var faceIds = _.map(jsonData, x => `\"${x.faceId}\"`);",
+									"   var faceIdsJSON = `[ ${faceIds.join()} ]`;",
+									"   pm.environment.set(\"faceIdsJSON\", faceIdsJSON);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"url\": \"https://techtrainertim.com/images/tim-test.png\"\n}"
+						},
+						"url": {
+							"raw": "{{base}}/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=true&returnFaceAttributes=glasses,age,gender,facialhair,headpose",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"detect"
+							],
+							"query": [
+								{
+									"key": "returnFaceId",
+									"value": "true"
+								},
+								{
+									"key": "returnFaceLandmarks",
+									"value": "true"
+								},
+								{
+									"key": "returnFaceAttributes",
+									"value": "glasses,age,gender,facialhair,headpose"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Face Identification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{api}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"personGroupId\": \"1\",\n\t\"faceIds\": [\"aede2965-e3b9-43ff-9c32-f57ac5e0aa02\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/face/v1.0/identify",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"face",
+								"v1.0",
+								"identify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "5. Face Verify",
+			"item": [
+				{
+					"name": "1. Detect for Verification",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Response is 200\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response should have 1 Face ID\", function() {",
+									"   var jsonData = pm.response.json();",
+									"   pm.expect(jsonData.length).to.equal(1);",
+									"   pm.environment.set(\"faceIdForVerification\", jsonData[0].faceId);",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{face-api-key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"url\": \"https://psfaceapicourse.blob.core.windows.net/individuals/steve4.png\"\n}"
+						},
+						"url": {
+							"raw": "{{base-url-face}}/detect",
+							"host": [
+								"{{base-url-face}}"
+							],
+							"path": [
+								"detect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Face Verify",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{face-api-key}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"faceId\": \"{{faceIdForVerification}}\",\n\t\"personGroupId\": \"pluralsight-authors\",\n\t\"personId\": \"<insert-person-id>\"\n}"
+						},
+						"url": {
+							"raw": "{{base-url-face}}/verify",
+							"host": [
+								"{{base-url-face}}"
+							],
+							"path": [
+								"verify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

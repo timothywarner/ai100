@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "e5567579-8eef-4c32-96d4-f4e47a9d39cf",
+		"name": "Translator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Translate text",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{api}}",
+						"description": "Cog Service multi-serviceAPI auth key",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "Content type declaration",
+						"type": "text"
+					},
+					{
+						"key": "charset",
+						"value": "UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Region",
+						"value": "eastus",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n    \"Text\": \"Hello. My name is Tim Warner. How are you today?\"\r\n}]"
+				},
+				"url": {
+					"raw": "{{translator-base}}/translate?api-version=3.0&from=en&to=de",
+					"host": [
+						"{{translator-base}}"
+					],
+					"path": [
+						"translate"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "3.0"
+						},
+						{
+							"key": "from",
+							"value": "en"
+						},
+						{
+							"key": "to",
+							"value": "de"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dictionary lookup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Cog Service multi-serviceAPI auth key",
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"description": "Content type declaration",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Region",
+						"value": "eastus",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"Text\": \"spider\"}]"
+				},
+				"url": {
+					"raw": "{{translator-base}}/dictionary/lookup?api-version=3.0&from=en&to=es",
+					"host": [
+						"{{translator-base}}"
+					],
+					"path": [
+						"dictionary",
+						"lookup"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "3.0"
+						},
+						{
+							"key": "from",
+							"value": "en"
+						},
+						{
+							"key": "to",
+							"value": "es"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transliterate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Cog Service multi-serviceAPI auth key",
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"description": "Content type declaration",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Region",
+						"type": "text",
+						"value": "eastus"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\"Text\":\"こんにちは\"},\r\n    {\"Text\":\"さようなら\"}\r\n]"
+				},
+				"url": {
+					"raw": "{{translator-base}}/transliterate?language=ja&fromScript=Jpan&toScript=Latn&api-version=3.0",
+					"host": [
+						"{{translator-base}}"
+					],
+					"path": [
+						"transliterate"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "ja"
+						},
+						{
+							"key": "fromScript",
+							"value": "Jpan"
+						},
+						{
+							"key": "toScript",
+							"value": "Latn"
+						},
+						{
+							"key": "from",
+							"value": "en",
+							"disabled": true
+						},
+						{
+							"key": "to",
+							"value": "es",
+							"disabled": true
+						},
+						{
+							"key": "api-version",
+							"value": "3.0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get languages",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "Cog Service multi-serviceAPI auth key",
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"description": "Content type declaration",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Region",
+						"type": "text",
+						"value": "eastus"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"Text\": \"spider\"}]"
+				},
+				"url": {
+					"raw": "{{translator-base}}/languages?api-version=3.0",
+					"host": [
+						"{{translator-base}}"
+					],
+					"path": [
+						"languages"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "3.0"
+						},
+						{
+							"key": "from",
+							"value": "en",
+							"disabled": true
+						},
+						{
+							"key": "to",
+							"value": "es",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

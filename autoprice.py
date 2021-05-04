@@ -50,9 +50,8 @@ data = {
 
 body = str.encode(json.dumps(data))
 
-url = 'http://20.81.96.169:80/api/v1/service/autoprice/score'
-# Replace this with the API key for the web service
-api_key = 'Z27HKPVffZ1cWBVSlfm2jYadthUYcLaB'
+url = 'http://52.146.30.234:80/api/v1/service/twai100autoendpoint/score'
+api_key = 'hLT7jSDD5C5zJ7kBP13sB06PAfIgR9cJ' # Replace this with the API key for the web service
 headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
 req = urllib.request.Request(url, body, headers)

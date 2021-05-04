@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "e2ec1faa-2e97-4c73-abe9-bfff1c3d11cd",
+		"name": "Form Recognizer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Analyze Receipt",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{api}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "image/jpeg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/tim/Desktop/receipt.jpg"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/formrecognizer/v2.0/prebuilt/receipt/analyze?includeTextDetails=false",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"formrecognizer",
+						"v2.0",
+						"prebuilt",
+						"receipt",
+						"analyze"
+					],
+					"query": [
+						{
+							"key": "includeTextDetails",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Analyze Receipt Result",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "image/png",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/tim/Desktop/ai900cs/training-materials/contoso-receipt.png"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/formrecognizer/v2.0/prebuilt/receipt/analyzeResults/cd04114c-7db6-44f3-b32e-5d7fced19168",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"formrecognizer",
+						"v2.0",
+						"prebuilt",
+						"receipt",
+						"analyzeResults",
+						"cd04114c-7db6-44f3-b32e-5d7fced19168"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analyze Form or Bizcard Layout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "image/png"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/Tim/Desktop/WinForms2WebForms.png"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/formrecognizer/v2.0/layout/analyze",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"formrecognizer",
+						"v2.0",
+						"layout",
+						"analyze"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Analyze Form or Bizcard Layout Result",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "{{api}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "image/png",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/Tim/Desktop/receipt.png"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/formrecognizer/v2.0/layout/analyzeResults/da3a1ec1-2a60-4259-bf47-9a9cfb7d57a7",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"formrecognizer",
+						"v2.0",
+						"layout",
+						"analyzeResults",
+						"da3a1ec1-2a60-4259-bf47-9a9cfb7d57a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analyze Business Card",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{api}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "image/jpeg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/tim/Desktop/ai900cs/training-materials/business-card-english.jpg"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/formrecognizer/v2.1-preview.1/prebuilt/businessCard/analyze",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"formrecognizer",
+						"v2.1-preview.1",
+						"prebuilt",
+						"businessCard",
+						"analyze"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Business Card Results",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{api}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/Tim/Desktop/ai900/aiclass/business-card-english.jpg"
+					}
+				},
+				"url": {
+					"raw": "{{base}}/formrecognizer/v2.1-preview.1/prebuilt/businessCard/analyze/3d7bff15-429a-465f-a9cb-8ac3172c6a69",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"formrecognizer",
+						"v2.1-preview.1",
+						"prebuilt",
+						"businessCard",
+						"analyze",
+						"3d7bff15-429a-465f-a9cb-8ac3172c6a69"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
